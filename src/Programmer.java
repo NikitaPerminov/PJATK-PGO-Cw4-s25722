@@ -11,9 +11,9 @@ public class Programmer extends Employee{
 
     @Override
     public String toString() {
-        return "Programmer{" +
-                "numberOfRepositores=" + numberOfRepositories +
-                '}';
+        return "Programmer : " +
+                "numberOfRepositories=" + numberOfRepositories + '\'' +
+                ", mainLanguage='" + mainLanguage;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class Programmer extends Employee{
     }
 
     public void printTechnologies(){
-        System.out.println("I program in " + mainLanguage);
+        System.out.println(getName() + " " + "and I program in " + mainLanguage);
     }
 
     public String getMainLanguage() {
@@ -42,14 +42,14 @@ public class Programmer extends Employee{
         this.mainLanguage = mainLanguage;
     }
 
-    public int getNumberOfRepositores() {
+    public int getNumberOfRepositories() {
         return numberOfRepositories;
     }
 
-    public void setNumberOfRepositores(int numberOfRepositores) {
-        if (numberOfRepositores <= 0) {
-            throw new IllegalArgumentException("Number of repositores cannot be negative");
+    public void setNumberOfRepositories(int numberOfRepositories) {
+        if (numberOfRepositories <= 0) {
+            throw new IllegalArgumentException("Number of repositories cannot be negative");
         }
-        this.numberOfRepositories = numberOfRepositores;
+        this.numberOfRepositories = numberOfRepositories;
     }
 }

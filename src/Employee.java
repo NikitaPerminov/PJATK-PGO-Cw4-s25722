@@ -1,5 +1,4 @@
 import java.util.Objects;
-import java.util.Random;
 
 public class Employee {
 
@@ -10,9 +9,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "idEmployee='" + idEmployee + '\'' +
-                '}';
+        return "Employee" +
+                " " + "="  + " " + "idEmployee ='" + idEmployee + '\'';
     }
 
     @Override
@@ -42,9 +40,9 @@ public class Employee {
 
     public Employee(String idEmployee, String name, String lastName, double baseSalary) {
         this.setIdEmployee(idEmployee);
-        this.name = name;
-        this.lastName = lastName;
-        this.baseSalary = baseSalary;
+        this.setName(name);
+        this.setLastName(lastName);
+        this.setBaseSalary(baseSalary);
     }
 
     public String getIdEmployee() {
@@ -52,9 +50,7 @@ public class Employee {
     }
 
     public void setIdEmployee(String idEmployee) {
-        Random random = new Random();
-        int generatedId = 10000 + random.nextInt(990000);
-        this.idEmployee = String.valueOf(generatedId);
+        this.idEmployee = idEmployee;
     }
 
     public String getName() {

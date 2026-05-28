@@ -5,7 +5,10 @@ public class Tester extends  Employee{
 
 
     public Tester(String idEmployee, String name, String lastName, double baseSalary, boolean isAutomated, int numberOfScenarios) {
-        super(idEmployee, name, lastName, baseSalary);
+        super(idEmployee,
+                name,
+                lastName,
+                baseSalary);
         this.isAutomated = isAutomated;
         this.numberOfScenarios = numberOfScenarios;
     }
@@ -21,7 +24,7 @@ public class Tester extends  Employee{
     }
 
     public void runReportOfTests(){
-        System.out.println("Running report of" + numberOfScenarios + " scenarios" );
+        System.out.println("Running report of " + numberOfScenarios + " scenarios" );
     }
 
 
