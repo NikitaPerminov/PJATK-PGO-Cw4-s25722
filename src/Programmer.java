@@ -1,23 +1,24 @@
 public class Programmer extends Employee{
 
     private String mainLanguage;
-    private int numberOfRepositores;
+    private int numberOfRepositories;
 
-    public Programmer(String idEmployee, String name, String lastName, double baseSalary) {
+    public Programmer(String idEmployee, String name, String lastName, double baseSalary, String mainLanguage, int numberOfRepositories) {
         super(idEmployee, name, lastName, baseSalary);
-        this.setMainLanguage(mainLanguage);
+        this.mainLanguage = mainLanguage;
+        this.numberOfRepositories = numberOfRepositories;
     }
 
     @Override
     public String toString() {
         return "Programmer{" +
-                "numberOfRepositores=" + numberOfRepositores +
+                "numberOfRepositores=" + numberOfRepositories +
                 '}';
     }
 
     @Override
     public double countCostPerMonth() {
-        return super.countCostPerMonth() + getBaseSalary()/(numberOfRepositores*10);
+        return super.countCostPerMonth() + getBaseSalary()/(numberOfRepositories*10);
 
     }
 
@@ -39,5 +40,16 @@ public class Programmer extends Employee{
             throw new IllegalArgumentException("Main language cannot be null");
         }
         this.mainLanguage = mainLanguage;
+    }
+
+    public int getNumberOfRepositores() {
+        return numberOfRepositories;
+    }
+
+    public void setNumberOfRepositores(int numberOfRepositores) {
+        if (numberOfRepositores <= 0) {
+            throw new IllegalArgumentException("Number of repositores cannot be negative");
+        }
+        this.numberOfRepositories = numberOfRepositores;
     }
 }
